@@ -39,6 +39,4 @@ k expose deployment nginx-deployment --port=80 --type=LoadBalancer -n nginx
 4. nginx 접속 IP 확인
 ```
 k get svc -n nginx
-
-security list 의 ingress rule 80 port 허용
 ```
