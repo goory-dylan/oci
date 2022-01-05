@@ -3,7 +3,7 @@
 ## OKE 클러스터 배포
 
 
-### Bastion Instacne 생성
+### Bastion Instacne 설정
 1. 생성시 Network 를 OKE VCN 과 동일한 VCN 으로 구성
 2. SSH 접근을 위해 Public subnet 설정
 3. Security List 의 Ingress Rule에 port 22 허용
@@ -16,4 +16,15 @@ sudo yum install python36-oci-cli
 7. kubectl 설치
 ```
 sudo yum install kubectl -y
+```
+8. helm 3 설치
+```
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+```
+9. .bashrc 설정
+```
+alias k=kubectl
+export KUBECONFIG=$HOME/.kube/config
 ```
