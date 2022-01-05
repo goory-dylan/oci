@@ -42,5 +42,5 @@ PWD: prom-operator
 ```
 Grafana Dashboard 접속
 https://grafana.com/grafana/dashboards/
-필요한 Dashboard 검색 후 Code 확인를 확인한 후 Garafana 콘솔에서 "+" 클릭후 Dashboard Import 항목에 Code 입력
+필요한 Dashboard 검색하여 Code를 확인하고 Garafana 콘솔에서 "+" 클릭후 Dashboard Import 항목에 Code 입력
 ```
