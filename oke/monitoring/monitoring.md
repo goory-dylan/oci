@@ -22,8 +22,19 @@ helm uninstall {NAME}
 ```
 k get all -n monitoring
 ```
-6. LoadBalancer 를 이용하여 Garafana 접속
+6. Garafana Loadbalancer 생성
 ```
 k get svc -n monitoring
 k edit svc kube-prometheus-stack-{RANDOM_NUMBER}-grafana
+
+# 타입변경 후 OCI의 Loadbalancer가 생성되면 PublicIP 를 확인하여 접속
+type: LoadBalancer
+```
+7. Garafana Password 확인
+```
+k get secret -n monitoring | grep grafana
+k get secret kube-prometheus-stack-{RANDOM_NUMBER}-grafana -n monitoring -o jsonpath="{.data.admin-password}" | base64 --decode; echo
+
+ID: admin
+PWD: prom-operator
 ```
