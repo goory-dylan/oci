@@ -10,8 +10,10 @@ OKE
 4. Security List 의 Egress Rule 에 All Protocol 허용
 5. SSH 접속
 6. oci 설치
-</
-/>
+```
 sudo yum install python36-oci-cli
+```
 7. kubectl 설치
+```
 sudo yum install kubectl -y
+```
