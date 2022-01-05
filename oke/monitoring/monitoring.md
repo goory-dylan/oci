@@ -18,3 +18,12 @@ helm install prometheus-community/kube-prometheus-stack --generate-name -n monit
 helm ls
 helm uninstall {NAME}
 ```
+5. 배포 상태 확인
+```
+k get all -n monitoring
+```
+6. LoadBalancer 를 이용하여 Garafana 접속
+```
+k get svc -n monitoring
+k edit svc kube-prometheus-stack-{RANDOM_NUMBER}-grafana
+```
