@@ -1,9 +1,9 @@
-OKE
+# OKE
 
-* OKE 클러스터 배포
+## OKE 클러스터 배포
 
 
-* Bastion Instacne 생성
+### Bastion Instacne 생성
 1. 생성시 Network 를 OKE VCN 과 동일한 VCN 으로 구성
 2. SSH 접근을 위해 Public subnet 설정
 3. Security List 의 Ingress Rule에 port 22 허용
