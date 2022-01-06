@@ -34,6 +34,27 @@ spec:
 3. service expose
 ```
 k expose deployment nginx-deployment --port=80 --type=LoadBalancer -n nginx
+
+or
+
+k create -f nginx-svc.yaml -n nginx
+
+nginx-svc.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-deployment
+  namespace: nginx
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx
+  sessionAffinity: None
+  type: LoadBalancer
 ```
 
 4. nginx 접속 IP 확인
