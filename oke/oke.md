@@ -11,7 +11,7 @@
 5. SSH 접속
 6. oci 설치
 ```
-sudo yum install python36-oci-cli
+sudo yum install python36-oci-cli -y
 ```
 7. kubectl 설치
 ```
