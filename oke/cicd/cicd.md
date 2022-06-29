@@ -58,6 +58,12 @@ spring-topic
 Enable Logging
 ```
 
+* Sample Source Download
+```
+curl https://start.spring.io/starter.tgz -d baseDir=spring -d name=spring -d artifactId=rest-service -d javaVersion=1.8 -d dependencies=web,actuator | tar -xzvf -
+
+```
+
 * Code Repository 생성
 ```
 Name : spring-code
