@@ -64,6 +64,18 @@ Name : spring-code
 
 git clone <YourClonewithHTTPS URL>
 
-username : **<tenancy-name>**/<username>
+username : <tenancy-name>/<username>
 password : ${AuthToken_Value}
+
+wget https://github.com/TheKoguryo/MuShop-storefront/archive/refs/tags/v2022.03.tar.gz
+tar -xvzf v2022.03.tar.gz --strip-components=1 -C mushop-storefront-code-repo/
+
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+
+cd spring-code
+git add .
+git commit -m "init"
+git push
 ```
+
