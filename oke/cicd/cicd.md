@@ -64,17 +64,28 @@ curl https://start.spring.io/starter.tgz -d baseDir=spring -d name=spring -d art
 
 ```
 
+* Sample Source Download
+```
+git clone https://github.com/goory-dylan/spring-sample.git
+
+chmod 755 mvnw
+
+cd spring-sample
+rm .git
+cp -R * ../spring-code/
+cp -R .mvn ../spring-code/
+```
+
 * Code Repository 생성
 ```
 Name : spring-code
 
 git clone <YourClonewithHTTPS URL>
 
-username : <tenancy-name>/<username>
+username : <tenancy-name>/oracleidentitycloudservice/<username>
 password : ${AuthToken_Value}
 
-wget https://github.com/TheKoguryo/MuShop-storefront/archive/refs/tags/v2022.03.tar.gz
-tar -xvzf v2022.03.tar.gz --strip-components=1 -C mushop-storefront-code-repo/
+
 
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
