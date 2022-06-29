@@ -46,3 +46,5 @@ Developer Services > Application Integration > Notifications
 oci-hol-devops-topic
 ```
 
+* DevOps 프로젝트 생성
+Developer Services > DevOps
