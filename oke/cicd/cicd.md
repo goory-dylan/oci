@@ -34,6 +34,15 @@ Allow dynamic-group ConnectionDynamicGroup to read secret-family in compartment 
 ```
 
 * Policy 설정 (root Compartment에서 생성)
+Name : DevOps-root-policy
 ```
+Allow dynamic-group BuildDynamicGroup to manage repos in tenancy
+```
+
+* Notification Topic 생성
+DevOps 프로젝트 생성시 필수 요구 사항이며 DevOps 파이프 라인 실행이 발생하는 주요 이벤트를 알려주기 위한 용도
+```
+Developer Services > Application Integration > Notifications
+oci-hol-devops-topic
 ```
 
