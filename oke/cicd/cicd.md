@@ -44,11 +44,26 @@ Allow dynamic-group BuildDynamicGroup to manage repos in tenancy
 DevOps 프로젝트 생성시 필수 요구 사항이며 DevOps 파이프 라인 실행이 발생하는 주요 이벤트를 알려주기 위한 용도
 ```
 Developer Services > Application Integration > Notifications
-spring-devops-topic
+spring-topic
 ```
 
 * DevOps 프로젝트 생성
+```
 Developer Services > DevOps > Create Project >
 Project Name : Spring
 
 Change Topic
+spring-topic
+
+Enable Logging
+```
+
+* Code Repository 생성
+```
+Name : spring-code
+
+git clone <YourClonewithHTTPS URL>
+
+username : **<tenancy-name>**/<username>
+password : ${AuthToken_Value}
+```
