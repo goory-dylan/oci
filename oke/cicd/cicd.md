@@ -1,7 +1,5 @@
 # Start CI/CD
-```
 OKE Cluster가 배포되어 있고 Bastion 서버가 생성되어 있는 상태에서 시작
-```
 
 * Dynamic Group 생성 (OKE가 배포되어 있는 Compartment에서 생성)
 Name : CoderepoDynamicGroup
@@ -22,7 +20,7 @@ ALL {resource.type = 'devopsdeploypipeline', resource.compartment.id = '<YourCom
 ```
 
 * Policy 설정 (OKE가 배포되어 있는 Compartment에서 생성)
-* 
+ 
 Name : DevOps-compartment-policy
 ```
 Allow dynamic-group CoderepoDynamicGroup to manage devops-family in compartment <YourCompartmentName>
@@ -33,5 +31,9 @@ Allow dynamic-group BuildDynamicGroup to manage generic-artifacts in compartment
 Allow dynamic-group BuildDynamicGroup to use ons-topics in compartment <YourCompartmentName>
 Allow dynamic-group DeployDynamicGroup to manage all-resources in compartment <YourCompartmentName>
 Allow dynamic-group ConnectionDynamicGroup to read secret-family in compartment <YourCompartmentName>
+```
+
+* Policy 설정 (root Compartment에서 생성)
+```
 ```
 
