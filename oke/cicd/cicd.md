@@ -277,5 +277,6 @@ DevOps 프로젝트 > Trigger > Create Trigger
 
 Name : spring-trigger
 Source connection : OCI code repository
-Select code repository : 선택
+Select code repository : code repository 선택
+Add action : build pipeline 선택
 ```
