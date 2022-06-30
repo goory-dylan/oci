@@ -62,6 +62,8 @@ Enable Logging
 ```
 git clone https://github.com/goory-dylan/spring-sample.git
 
+./mvnw clean package
+java -jar target/rest-service-0.0.1-SNAPSHOT.jar
 or
 
 curl https://start.spring.io/starter.tgz -d baseDir=spring -d name=spring -d artifactId=rest-service -d javaVersion=1.8 -d dependencies=web,actuator | tar -xzvf -
