@@ -201,11 +201,12 @@ Build config/result Artifact name : output-image
 ```
 DevOps 프로젝트에서 Artifacts 선택
 Add artifact > Kubernetes manifest
-Name : k8s_spring_deploy_template
+Name : spring_deploy_template
 Type : Kubernetes manifest
 Artifact source : Inline
 
 Value : 
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -245,10 +246,10 @@ Region, Compartment, Cluster 선택
 Devops 프로젝트에서 Deployment Pipelines 선택
 Name : spring-deployment-pipeline
 
-Apply manifest to your Kubernetes Cluster
-Add Stage
+Add Stage > Apply manifest to your Kubernetes Cluster
 
-
+Name :  spring_deploy_template
+Environment : cluster1 (앞서 생성한 Environment 선택)
 ```
 
 * namespace, secret 생성
@@ -261,4 +262,11 @@ kubectl create secret docker-registry ocir-secret \
   --docker-password="${AUTH_TOKEN}" \
   --docker-email="${E-MAIL}" \
   --docker-server=ap-seoul-1.ocir.io
+```
+
+* Build pipeline 에 Deployment 추가
+```
+이전에 생성한 Build pipeline 선택 > Add Stage > Trigger Deployment
+Name : trigger-deployment-pipeline
+deployment pipeline 선택
 ```
