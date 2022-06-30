@@ -106,7 +106,7 @@ Primary Code Repository 선택
 ```
 
 
-* Build spec 작성 (build_spec.yaml)
+* Build spec 작성 (build_spec.yaml / 작성 후 git push)
 ```
 version: 0.1
 component: build
@@ -174,4 +174,25 @@ outputArtifacts:
   - name: output-image
     type: DOCKER_IMAGE
     location: new-generated-image    
+```
+
+* Start manual build 실행
+```
+Build Pipelines 에서 manual run 을 이용하여 이상 유무 확인
+```
+
+* OCIR 이미지 저장
+```
+build pipeline > Add stage > Delivery Artifact Stage
+Stage name : deliver-generated-image
+
+Create Artifact
+Name: generated_image_with_tag
+Image Path: ${OCIR_PATH}:${TAG}
+
+Name: generated_image_with_latest
+Image Path: ${OCIR_PATH}:latest
+
+
+Build config/result Artifact name : output-image
 ```
