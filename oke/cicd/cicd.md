@@ -60,8 +60,11 @@ Enable Logging
 
 * Sample Source Download
 ```
-curl https://start.spring.io/starter.tgz -d baseDir=spring -d name=spring -d artifactId=rest-service -d javaVersion=1.8 -d dependencies=web,actuator | tar -xzvf -
+git clone https://github.com/goory-dylan/spring-sample.git
 
+or
+
+curl https://start.spring.io/starter.tgz -d baseDir=spring -d name=spring -d artifactId=rest-service -d javaVersion=1.8 -d dependencies=web,actuator | tar -xzvf -
 ```
 
 * Sample Source Download
