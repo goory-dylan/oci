@@ -181,7 +181,7 @@ outputArtifacts:
 Build Pipelines 에서 manual run 을 이용하여 이상 유무 확인
 ```
 
-* OCIR 이미지 저장
+* OCIR 이미지 저장을 위한 stage 추가
 ```
 build pipeline > Add stage > Delivery Artifact Stage
 Stage name : deliver-generated-image
@@ -195,4 +195,70 @@ Image Path: ${OCIR_PATH}:latest
 
 
 Build config/result Artifact name : output-image
+```
+
+* Deploy Artifact 생성
+```
+DevOps 프로젝트에서 Artifacts 선택
+Add artifact > Kubernetes manifest
+Name : k8s_spring_deploy_template
+Type : Kubernetes manifest
+Artifact source : Inline
+
+Value : 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: spring-boot-greeting
+  name: spring-boot-greeting-deployment
+  namespace: spring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-boot-greeting
+  template:
+    metadata:
+      labels:
+        app: spring-boot-greeting
+    spec:
+      containers:
+      - name: spring-boot-greeting
+        image: ${OCIR_PATH}:${TAG}
+      imagePullSecrets:
+      - name: ocir-secret
+      restartPolicy: Always
+```
+
+* Kubernetes Environment 등록
+```
+Devops 프로젝트 > Environments > Create Environments
+
+Name : cluster1
+Region, Compartment, Cluster 선택
+```
+
+
+* Deploy Pipeline 생성
+```
+Devops 프로젝트에서 Deployment Pipelines 선택
+Name : spring-deployment-pipeline
+
+Apply manifest to your Kubernetes Cluster
+Add Stage
+
+
+```
+
+* namespace, secret 생성
+```
+spring namespace 를 미리 생성하고 ocir-secret 생성
+kubectl create ns spring
+
+kubectl create secret docker-registry ocir-secret \
+  --docker-username="${OCIR_USER_NAME}" \
+  --docker-password="${AUTH_TOKEN}" \
+  --docker-email="${E-MAIL}" \
+  --docker-server=ap-seoul-1.ocir.io
 ```
