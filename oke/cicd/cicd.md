@@ -248,7 +248,7 @@ Name : spring-deployment-pipeline
 
 Add Stage > Apply manifest to your Kubernetes Cluster
 
-Name :  spring_deploy_template
+Name :  apply-manifest-to-oke-stage
 Environment : cluster1 (앞서 생성한 Environment 선택)
 ```
 
