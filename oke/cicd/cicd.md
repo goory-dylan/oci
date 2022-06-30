@@ -280,3 +280,8 @@ Source connection : OCI code repository
 Select code repository : code repository 선택
 Add action : build pipeline 선택
 ```
+
+* App 수정 및 배포 확인
+```
+vi src/main/java/com/example/restservice/GreetingController.java
+```
