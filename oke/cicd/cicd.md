@@ -62,11 +62,17 @@ Enable Logging
 ```
 git clone https://github.com/goory-dylan/spring-sample.git
 
-./mvnw clean package
+cd spring-sample
+
+실행 명령어
 java -jar target/rest-service-0.0.1-SNAPSHOT.jar
 
+테스트 명령어
+./mvnw clean package
+java -jar target/rest-service-0.0.1-SNAPSHOT.jar
+curl http://localhost:8080/greeting; echo
 
-cd spring-sample
+복사 시에 사용 명령어
 rm .git
 cp -R * ../spring-code/
 cp -R .mvn ../spring-code/
