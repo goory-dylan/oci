@@ -2,6 +2,7 @@
 OKE Cluster가 배포되어 있고 Bastion 서버가 생성되어 있는 상태에서 시작
 
 * Dynamic Group 생성 (OKE가 배포되어 있는 Compartment에서 생성)
+
 Name : CoderepoDynamicGroup
 ```
 ALL {resource.type = 'devopsrepository', resource.compartment.id = '<YourCompartmentOCID>'}
@@ -47,10 +48,17 @@ Developer Services > Application Integration > Notifications
 spring-topic
 ```
 
+* Log Group 생성
+```
+Observability & Management > Logging > Log groups > Create Log group
+
+Name : oke-log-group
+```
+
 * DevOps 프로젝트 생성
 ```
 Developer Services > DevOps > Create Project >
-Project Name : Spring
+Project Name : spring-project
 
 Change Topic
 spring-topic
