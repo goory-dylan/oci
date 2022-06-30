@@ -270,3 +270,12 @@ kubectl create secret docker-registry ocir-secret \
 Name : trigger-deployment-pipeline
 deployment pipeline 선택
 ```
+
+* Trigger 설정
+```
+DevOps 프로젝트 > Trigger > Create Trigger
+
+Name : spring-trigger
+Source connection : OCI code repository
+Select code repository : 선택
+```
