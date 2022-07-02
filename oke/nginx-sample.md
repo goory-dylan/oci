@@ -2,7 +2,7 @@
 
 1. namespace 생성
 ```
-k create namepsace nginx
+k create namespace nginx
 ```
 
 2. deployment 배포
