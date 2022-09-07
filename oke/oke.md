@@ -72,9 +72,9 @@ API Keys 에서 Add API Key 클릭
 ```
 3. OKE Access Cluster 에서 Local Access 내용을 참고하여 kubeconfig 파일 생성
 ```
-oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.ap-seoul-1.aaaaaaaafkjm5avmopp5nwnzfnm --file $HOME/.kube/config --region ap-seoul-1 --token-version 2.0.0  --kube-endpoint PUBLIC_ENDPOINT
+oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.ap-seoul-1.aaaaaaaa...wnzfnm --file $HOME/.kube/config --region ap-seoul-1 --token-version 2.0.0  --kube-endpoint PUBLIC_ENDPOINT
 
 or
 
-oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.ap-seoul-1.aaaaaaaafkjm5avmopp5nwnzfnm --file $HOME/.kube/config --region ap-seoul-1 --token-version 2.0.0  --kube-endpoint PRIVATE_ENDPOINT
+oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.ap-seoul-1.aaaaaaaa...wnzfnm --file $HOME/.kube/config --region ap-seoul-1 --token-version 2.0.0  --kube-endpoint PRIVATE_ENDPOINT
 ```
