@@ -38,10 +38,10 @@ chmod 700 get_helm.sh
 alias k=kubectl
 export KUBECONFIG=$HOME/.kube/config
 
-#현재 namespace 확인
+# check current namespace
 alias wmi='kubectl config view --minify | grep namespace'
 
-#namespace 변경
+# change namespace
 alias kcd='kubectl config set-context $(kubectl config current-context) --namespace'
 ```
 
