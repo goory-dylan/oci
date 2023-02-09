@@ -16,6 +16,16 @@ sudo yum install python36-oci-cli -y
 7. kubectl 설치
 ```
 sudo yum install kubectl -y
+
+or
+for Linux
+
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+chmod +x kubectl
+mkdir -p ~/.local/bin
+mv ./kubectl ~/.local/bin/kubectl
+kubectl version --client
 ```
 8. helm 3 설치
 ```
