@@ -1,36 +1,36 @@
-WEB_LB_WAS 연동
+# WEB_LB_WAS 연동
 
-Apache
+## Apache
 setsebool -P httpd_can_network_connect on
 
-httpd.conf
-##
+### httpd.conf
+```
 LogFormat "%{X-Forwarded-For}i %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
 
 Include conf/extra/httpd-vhosts.conf
 Include conf/extra/mod_remoteip.conf
-##
+```
 
-httpd-vhosts.conf
-##
+### httpd-vhosts.conf
+```
 <VirtualHost *:8080>
    DocumentRoot "/var/www/html2"
    ServerName test.com
    ProxyPass / http://${LB_IP_PORT}/ disablereuse=on
    ProxyPassReverse / http://${LB_IP_PORT}/
 </VirtualHost>
-##
+```
 
-mod_remoteip.conf
-##
+### mod_remoteip.conf
+```
 LoadModule remoteip_module modules/mod_remoteip.so
 RemoteIPHeader X-Forwarded-For
-##
+```
 
-Tomcat
+## Tomcat
 
-server.xml
-##
+### server.xml
+```
 ....
     <!-- You should set jvmRoute to support load-balancing via AJP ie :
     <Engine name="Catalina" defaultHost="localhost" jvmRoute="jvm1">
@@ -58,4 +58,4 @@ server.xml
     </Engine>
   </Service>
 </Server>
-##
+```
