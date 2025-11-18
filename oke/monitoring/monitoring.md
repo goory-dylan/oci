@@ -33,6 +33,10 @@ kubectl edit svc kube-prometheus-stack-{RANDOM_NUMBER}-grafana -n monitoring
 
 # 타입변경 후 OCI의 Loadbalancer가 생성되면 PublicIP 를 확인하여 접속
 type: LoadBalancer
+
+or
+
+kubectl patch svc kube-prometheus-stack-{RANDOM_NUMBER}-grafana -n monitoring -p '{"spec":{"type":"LoadBalancer"}}'
 ```
 7. Garafana Password 확인
 ```
