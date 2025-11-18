@@ -44,7 +44,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nginx-deployment
-  namespace: nginx
 spec:
   externalTrafficPolicy: Cluster
   ports:
