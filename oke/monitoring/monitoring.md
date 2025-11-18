@@ -40,7 +40,7 @@ kubectl get secret -n monitoring | grep grafana
 kubectl get secret kube-prometheus-stack-{RANDOM_NUMBER}-grafana -n monitoring -o jsonpath="{.data.admin-password}" | base64 --decode; echo
 
 ID: admin
-PWD: prom-operator
+PWD: {RANDOMVALUE}
 ```
 8. Grafana Dashboard 배포
 ```
