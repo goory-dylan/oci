@@ -19,8 +19,8 @@ helm install prometheus-community/kube-prometheus-stack --generate-name -n monit
 ```
 4. helm 조회 및 삭제 (optional)
 ```
-helm ls
-helm uninstall {NAME}
+helm ls -A
+helm uninstall {NAME} -n {NAMESPACE}
 ```
 5. 배포 상태 확인
 ```
