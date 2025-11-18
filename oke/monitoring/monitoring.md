@@ -29,7 +29,7 @@ kubectl get all -n monitoring
 6. Garafana Loadbalancer 생성
 ```
 kubectl get svc -n monitoring
-kubectl edit svc kube-prometheus-stack-{RANDOM_NUMBER}-grafana
+kubectl edit svc kube-prometheus-stack-{RANDOM_NUMBER}-grafana -n monitoring
 
 # 타입변경 후 OCI의 Loadbalancer가 생성되면 PublicIP 를 확인하여 접속
 type: LoadBalancer
