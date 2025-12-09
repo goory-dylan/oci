@@ -12,6 +12,11 @@
 6. oci 설치
 ```
 sudo yum install python36-oci-cli -y
+
+or
+oracle linux9
+sudo dnf -y install oraclelinux-developer-release-el9
+sudo dnf install python39-oci-cli
 ```
 7. kubectl 설치
 ```
